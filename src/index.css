@@ -1,0 +1,206 @@
+
+body {
+	margin: 0;
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+.app {
+	background-color: #333;
+	min-height: 100vh;
+	width: 100%;
+}
+
+.boardContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 1vh;
+}
+
+.boardButtonsContaioner {
+	display: inline-flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+
+.boardButton {
+	display: block;
+}
+
+.boardSwitch {
+	color: white;
+	cursor: default;
+}
+
+.switch {
+	display: inline-block;
+	width: 28px;
+	height: 16px;
+	background-color: lightgrey;
+	text-align: left;
+	vertical-align: middle;
+	margin: 3px;
+	border-radius: 8px;
+}
+
+.switch.checked {
+	text-align: right;
+	background-color: #0C7C59;
+}
+
+.switch>div {
+	display: inline-block;
+	background-color: white;
+	width: 12px;
+	height: 12px;
+	margin: 2px;
+	border-radius: 6px;
+}
+
+.board {
+	display: flex;
+	/*width: 72vh;*/
+	margin: 1vh;
+}
+
+.boardFile {
+	display: flex;
+	flex-direction: column;
+}
+
+.boardFileTitle {
+	text-align: center;
+	height: 2.2vh;
+	line-height: 2.2vh;
+	font-size: 2vh;
+}
+
+.boardRankTitles, .boardFileTitle {
+	background-color: white;
+	color: black;
+}
+
+.boardContainer.black .boardRankTitles, .boardContainer.black .boardFileTitle {
+	background-color: black;
+	color: white;
+}
+
+.boardRankTitle {
+	font-size: 2vh;
+	width: 2.2vh;
+	height: 9vh;
+	max-height: 10vw;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.boardRankTitle:first-child,.boardRankTitle:last-child {
+	line-height: normal;
+	height: 2.2vh;
+}
+
+.board.black {
+	flex-direction: row-reverse;
+}
+
+.board.white .boardFile {
+	flex-direction: column-reverse;
+}
+
+.boardSquare {
+	width: 9vh;
+	max-width: 10vw;
+	height: 9vh;
+	max-height: 10vw;
+	background-color: #E6C79C;/*#ffe58f*/
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.boardSquare.dark {
+	background-color: #732a11;
+}
+
+.greenGhostSquare {
+	position: absolute;
+	top: 0vh;
+	left: 0vh;
+	bottom: 0vh;
+	right: 0vh;
+	background-color: rgba(12, 124, 89, 0.6);/*rgba(108, 191, 103, 0.6)*/
+	cursor: pointer;
+	z-index: 9;
+}
+
+.ghostSquare {
+	cursor: pointer;
+}
+
+.cancelMoveGhostSquare, .ghostSquare {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	z-index: 1000;
+}
+
+.piece {
+	cursor: default;
+	width: 80%;
+	height: 80%;
+}
+
+.piece .symbol {
+	width: 100%;
+	height: 100%;
+}
+
+.clickable {
+	cursor: pointer;
+}
+
+.piece.active {
+	opacity: 0.5;
+}
+
+.draggedContainer {
+	position: absolute;
+	width: 9vh;
+	height: 9vh;
+	margin-left: -4.5vh;
+	margin-top: -4.5vh;
+	z-index: 999;
+}
+
+.notation {
+	font-size: 2vh;
+	width: 72vh;
+	max-width: 90vw;
+	display: inline-block;
+}
+
+.notationMoveContainer {
+	display: inline-block;
+	height: 1.5em;
+}
+
+.notationMove {
+	padding: 0 5px;
+	margin: 5px;
+	background-color: #aaa;
+}
+
+.notationCount {
+	color: #aaa;
+}
